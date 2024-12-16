@@ -1,5 +1,5 @@
+<title>ourobs</title>
 <h1>ourobs</h1>
-<a id=s>permalink</a><br>
 <script>let d = document, dd = d.documentElement, gi = (id) => d.getElementById(id),
 gn = (t) => gi(t).value, cr = (n, c) => {
 let node = d.createElement("div");
@@ -8,7 +8,8 @@ return node;
 }, add = () => {    
 let c = gn("c"), n = cr(gn("n"), c), e = gi("e");
 e.insertBefore(n, e.firstChild);
-gi("s").setAttribute("href", `data:text/html;base64,${btoa(dd.outerHTML)}`);
+let ih = document.body.innerHTML;
+window.history.pushState(ih, "ourobs", `data:text/html;base64,${btoa(dd.outerHTML)}`);
 c.innerHTML = ""; c.select();
 };</script>
 <input placeholder=nick id=n type=text autofocus><br>
